@@ -27,7 +27,7 @@ export const options = {
         loadtest_hobbyhub_1000: {
             executor: 'constant-arrival-rate',
             duration: '1m', // total duration
-            preAllocatedVUs: 1000, // to allocate runtime resources
+            preAllocatedVUs: 250, // to allocate runtime resources
 
             rate: 1000, // number of constant iterations given `timeUnit`
             timeUnit: '1s',
@@ -37,7 +37,8 @@ export const options = {
 
 
 export default function () {
-    const url = 'http://hobbyhub.com/api/h/users';
+    // const url = 'http://hobbyhub.com/api/h/users';
+    const url = 'http://hobbyhub.australiacentral.cloudapp.azure.com/api/hobby';
     const response = http.get(url);
 
     check(response, {
